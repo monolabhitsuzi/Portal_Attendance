@@ -6,7 +6,11 @@
     <data>
 
         <variable
-            name="title"
+            name="roomId"
+            type="String" />
+
+        <variable
+            name="roomName"
             type="String" />
     </data>
 
@@ -15,14 +19,24 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/emptyText"
+            android:id="@+id/id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{title}"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{roomId}"
+            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{roomName}"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/id"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
