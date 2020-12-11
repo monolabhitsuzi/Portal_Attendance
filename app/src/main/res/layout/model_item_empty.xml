@@ -5,9 +5,6 @@
 
     <data>
 
-        <variable
-            name="title"
-            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +15,7 @@
             android:id="@+id/emptyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{title}"
+            android:text="@string/no_item"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

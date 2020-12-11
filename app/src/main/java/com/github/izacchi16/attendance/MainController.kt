@@ -2,7 +2,9 @@ package com.github.izacchi16.attendance
 
 import com.airbnb.epoxy.TypedEpoxyController
 
-class MainController : TypedEpoxyController<List<Room>>() {
+class MainController(
+    private val listener: Listener
+) : TypedEpoxyController<List<Room>>() {
     override fun buildModels(data: List<Room>) {
         if (data.isEmpty()) {
             itemEmpty {
@@ -18,9 +20,15 @@ class MainController : TypedEpoxyController<List<Room>>() {
                 id("$index")
                 roomId(id)
                 roomName(name)
+                listener { _ ->
+                    listener.onClick()
+                }
             }
         }
 
     }
 
+    interface Listener {
+        fun onClick()
+    }
 }

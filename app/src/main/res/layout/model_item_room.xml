@@ -12,30 +12,49 @@
         <variable
             name="roomName"
             type="String" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:onClick="@{listener}">
+
+        <TextView
+            android:id="@+id/header_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/header_id"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="@{roomId}"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/header_id"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="@{roomName}"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/id"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
